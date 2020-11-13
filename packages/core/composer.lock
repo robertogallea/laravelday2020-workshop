@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a830a1f8b6ea3499e6cb6c67dc9f6e2",
+    "content-hash": "415d97d84e7896eeab04f8967fb81eda",
     "packages": [
         {
             "name": "brick/math",
@@ -6389,6 +6389,35 @@
                 }
             },
             "description": "Domain for project",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "workshop/ui",
+            "version": "dev-05-externalize-core",
+            "dist": {
+                "type": "path",
+                "url": "../ui",
+                "reference": "5ee3b665ed9cfc7c8c1e11763d562fde620b3dd6"
+            },
+            "require": {
+                "orchestra/testbench": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Workshop\\Ui\\UiServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Workshop\\Ui\\": "src/"
+                }
+            },
+            "description": "Ui for project",
             "transport-options": {
                 "relative": true
             }
