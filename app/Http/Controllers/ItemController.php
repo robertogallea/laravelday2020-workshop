@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 
-use Workshop\Domain\Models\Item;
+use Workshop\Domain\Repositories\ItemRepositoryInterface;
 
 class ItemController
 {
-    public function __invoke()
+    public function __invoke(ItemRepositoryInterface $itemRepository)
     {
-        $items = Item::all();
+        $items = $itemRepository->all();
 
         $count = $items->count();
         $last_update = $items
