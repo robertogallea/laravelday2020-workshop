@@ -14,8 +14,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "workshop/domain": "*",
-        "workshop/ui": "*"
+        "workshop/domain": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -64,10 +63,6 @@
         {
             "type": "path",
             "url": "./packages/domain"
-        },
-        {
-            "type": "path",
-            "url": "./packages/ui"
         }
     ]
 }
