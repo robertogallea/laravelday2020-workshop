@@ -15,7 +15,8 @@
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "workshop/domain": "*",
-        "workshop/ui": "*"
+        "workshop/ui": "*",
+        "workshop/dbaccess": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -68,6 +69,10 @@
         {
             "type": "path",
             "url": "./packages/ui"
+        },
+        {
+            "type": "path",
+            "url": "./packages/dbaccess"
         }
     ]
 }

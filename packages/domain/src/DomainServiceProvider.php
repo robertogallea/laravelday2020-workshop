@@ -5,7 +5,7 @@ namespace Workshop\Domain;
 
 
 use Illuminate\Support\ServiceProvider;
-use Workshop\Domain\Repositories\DBItemRepository;
+use Workshop\DBAccess\Repositories\DBItemRepository;
 use Workshop\Domain\Repositories\ItemRepositoryInterface;
 
 class DomainServiceProvider extends ServiceProvider

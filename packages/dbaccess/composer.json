@@ -1,0 +1,28 @@
+{
+    "name": "workshop/dbaccess",
+    "type": "library",
+    "description": "DB access for project",
+    "require": {
+        "orchestra/testbench": "*",
+        "workshop/domain": "*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Workshop\\DBAccess\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Workshop\\DBAccess\\DBAccessServiceProvider"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../domain"
+        }
+    ]
+}
