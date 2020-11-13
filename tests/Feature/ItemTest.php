@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Models\Item;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use Workshop\Domain\Models\Item;
 
 class ItemTest extends TestCase
 {

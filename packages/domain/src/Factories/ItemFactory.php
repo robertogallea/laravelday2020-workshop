@@ -1,9 +1,9 @@
 <?php
 
-namespace Database\Factories;
+namespace Workshop\Domain\Factories;
 
-use App\Models\Item;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Workshop\Domain\Models\Item;
 
 
 class ItemFactory extends Factory
