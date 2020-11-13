@@ -1,0 +1,29 @@
+{
+    "name": "workshop/core",
+    "type": "library",
+    "description": "Core for project",
+    "require": {
+        "orchestra/testbench": "*",
+        "workshop/domain": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Workshop\\Core\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Workshop\\Core\\CoreServiceProvider"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../domain"
+        }
+    ]
+}

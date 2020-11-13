@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Workshop\Core\Http\Controllers;
 
 
 use Workshop\Domain\Repositories\ItemRepositoryInterface;
