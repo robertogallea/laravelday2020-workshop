@@ -4,8 +4,7 @@
     "description": "Core for project",
     "require": {
         "orchestra/testbench": "*",
-        "workshop/domain": "*",
-        "workshop/ui": "*"
+        "workshop/domain": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

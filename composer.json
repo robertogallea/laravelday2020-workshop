@@ -14,6 +14,9 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
+        "workshop/domain": "*",
+        "workshop/ui": "*",
+        "workshop/dbaccess": "*",
         "workshop/core": "*"
     },
     "require-dev": {
@@ -60,6 +63,18 @@
         ]
     },
     "repositories": [
+        {
+            "type": "path",
+            "url": "./packages/domain"
+        },
+        {
+            "type": "path",
+            "url": "./packages/ui"
+        },
+        {
+            "type": "path",
+            "url": "./packages/dbaccess"
+        },
         {
             "type": "path",
             "url": "./packages/core"

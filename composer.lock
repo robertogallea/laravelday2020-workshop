@@ -7119,11 +7119,11 @@
         },
         {
             "name": "workshop/core",
-            "version": "dev-05-externalize-core",
+            "version": "dev-06-refactor-test",
             "dist": {
                 "type": "path",
                 "url": "./packages/core",
-                "reference": "ffa0fd28c2ebf5c990fbb40a59c7bfaffb2689f4"
+                "reference": "6333e527d49857f71e33a3ab6d3170dd06aa0f29"
             },
             "require": {
                 "orchestra/testbench": "*",
@@ -7142,6 +7142,11 @@
                     "Workshop\\Core\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests"
+                }
+            },
             "description": "Core for project",
             "transport-options": {
                 "relative": true
@@ -7149,7 +7154,7 @@
         },
         {
             "name": "workshop/dbaccess",
-            "version": "dev-05-externalize-core",
+            "version": "dev-06-refactor-test",
             "dist": {
                 "type": "path",
                 "url": "./packages/dbaccess",
@@ -7179,7 +7184,7 @@
         },
         {
             "name": "workshop/domain",
-            "version": "dev-05-externalize-core",
+            "version": "dev-06-refactor-test",
             "dist": {
                 "type": "path",
                 "url": "./packages/domain",
@@ -7208,7 +7213,7 @@
         },
         {
             "name": "workshop/ui",
-            "version": "dev-05-externalize-core",
+            "version": "dev-06-refactor-test",
             "dist": {
                 "type": "path",
                 "url": "./packages/ui",
@@ -7304,16 +7309,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.5.0",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "81698c5e32837c74abf9bb764ff0c1b3e001afb3"
+                "reference": "3b3403f18bbdc0aeadf1ffaddf11a1588b12ec7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/81698c5e32837c74abf9bb764ff0c1b3e001afb3",
-                "reference": "81698c5e32837c74abf9bb764ff0c1b3e001afb3",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/3b3403f18bbdc0aeadf1ffaddf11a1588b12ec7a",
+                "reference": "3b3403f18bbdc0aeadf1ffaddf11a1588b12ec7a",
                 "shasum": ""
             },
             "require": {
@@ -7377,7 +7382,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2020-10-27T13:02:22+00:00"
+            "time": "2020-11-13T13:36:24+00:00"
         },
         {
             "name": "facade/ignition-contracts",

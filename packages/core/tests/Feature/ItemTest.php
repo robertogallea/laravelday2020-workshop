@@ -8,7 +8,6 @@ use Workshop\Core\CoreServiceProvider;
 use Workshop\Domain\DomainServiceProvider;
 use Workshop\Domain\Models\Item;
 use Workshop\Domain\Repositories\ItemRepositoryInterface;
-use Workshop\Ui\UiServiceProvider;
 
 class ItemTest extends TestCase
 {
@@ -18,35 +17,48 @@ class ItemTest extends TestCase
     {
         parent::setUp();
 
+        $this->mockRepositories();
 
+        $this->mockViews();
     }
 
 
     /** @test */
     public function it_shows_items()
     {
-        $this->app->bind(
-            ItemRepositoryInterface::class,
-            function() {
-                return $this->mock(ItemRepositoryInterface::class, function ($mock) {
-                    $mock->shouldReceive('all')
-                        ->once()
-                        ->andReturn(Item::factory()->count(2)->create());
-                });;
-            });
-
-
-        $this->get('/')
-            ->assertOk();
+        $this->get('/')->assertOk();
     }
 
     protected function getPackageProviders($app)
     {
         return [
             CoreServiceProvider::class,
-            DomainServiceProvider::class,
-            UiServiceProvider::class
+            DomainServiceProvider::class
         ];
+    }
+
+    private function mockViews(): void
+    {
+        \View::addNamespace('workshop', null);
+        \View::shouldReceive('make')
+            ->once()
+            ->with('workshop::index', [], [])
+            ->andReturnSelf()
+            ->shouldReceive('with')
+            ->once();
+    }
+
+    private function mockRepositories(): void
+    {
+        $this->app->bind(
+            ItemRepositoryInterface::class,
+            function () {
+                return $this->mock(ItemRepositoryInterface::class, function ($mock) {
+                    $mock->shouldReceive('all')
+                        ->once()
+                        ->andReturn(Item::factory()->count(2)->create());
+                });
+            });
     }
 
 
