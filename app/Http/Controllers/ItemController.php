@@ -24,6 +24,6 @@ class ItemController
             'Ultimo aggiornamento' => $last_update,
         ];
 
-        return view('workshop::index')->with(compact('items', 'data'));
+        return view('index')->with(compact('items', 'data'));
     }
 }
