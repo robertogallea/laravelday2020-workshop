@@ -7126,7 +7126,7 @@
         },
         {
             "name": "workshop/core",
-            "version": "dev-07-add-configurations",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "./packages/core",
@@ -7160,7 +7160,7 @@
         },
         {
             "name": "workshop/dbaccess",
-            "version": "dev-07-add-configurations",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "./packages/dbaccess",
@@ -7190,7 +7190,7 @@
         },
         {
             "name": "workshop/domain",
-            "version": "dev-07-add-configurations",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "./packages/domain",
@@ -7219,7 +7219,7 @@
         },
         {
             "name": "workshop/ui",
-            "version": "dev-07-add-configurations",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "./packages/ui",

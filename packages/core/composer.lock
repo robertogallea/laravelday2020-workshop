@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "38b9cf1f3edf86b9f730ed1bcdb34f9c",
+=======
+    "content-hash": "f94afc8209775899869a10464127cb9d",
+>>>>>>> 07-add-configurations
     "packages": [
         {
             "name": "brick/math",
@@ -6370,6 +6374,38 @@
                 "source": "https://github.com/webmozart/assert/tree/master"
             },
             "time": "2020-07-08T17:02:28+00:00"
+<<<<<<< HEAD
+=======
+        },
+        {
+            "name": "workshop/domain",
+            "version": "dev-07-add-configurations",
+            "dist": {
+                "type": "path",
+                "url": "../domain",
+                "reference": "45e96d576f5c440f5c107e46296e11da1e68fbd5"
+            },
+            "require": {
+                "orchestra/testbench": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Workshop\\Domain\\DomainServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Workshop\\Domain\\": "src/"
+                }
+            },
+            "description": "Domain for project",
+            "transport-options": {
+                "relative": true
+            }
+>>>>>>> 07-add-configurations
         }
     ],
     "packages-dev": [],
