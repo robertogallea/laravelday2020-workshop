@@ -7126,15 +7126,14 @@
         },
         {
             "name": "workshop/core",
-            "version": "dev-07-isolate-core-from-view",
+            "version": "dev-07-add-configurations",
             "dist": {
                 "type": "path",
                 "url": "./packages/core",
-                "reference": "6333e527d49857f71e33a3ab6d3170dd06aa0f29"
+                "reference": "d7a30fce5640cdba72d43d5cbcd7fbf0654980b2"
             },
             "require": {
-                "orchestra/testbench": "*",
-                "workshop/domain": "*"
+                "orchestra/testbench": "*"
             },
             "type": "library",
             "extra": {
@@ -7161,7 +7160,7 @@
         },
         {
             "name": "workshop/dbaccess",
-            "version": "dev-07-isolate-core-from-view",
+            "version": "dev-07-add-configurations",
             "dist": {
                 "type": "path",
                 "url": "./packages/dbaccess",
@@ -7191,7 +7190,7 @@
         },
         {
             "name": "workshop/domain",
-            "version": "dev-07-isolate-core-from-view",
+            "version": "dev-07-add-configurations",
             "dist": {
                 "type": "path",
                 "url": "./packages/domain",
@@ -7220,7 +7219,7 @@
         },
         {
             "name": "workshop/ui",
-            "version": "dev-07-isolate-core-from-view",
+            "version": "dev-07-add-configurations",
             "dist": {
                 "type": "path",
                 "url": "./packages/ui",
