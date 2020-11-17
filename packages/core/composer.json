@@ -3,8 +3,7 @@
     "type": "library",
     "description": "Core for project",
     "require": {
-        "orchestra/testbench": "*",
-        "workshop/domain": "*"
+        "orchestra/testbench": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

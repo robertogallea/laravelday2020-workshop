@@ -18,11 +18,6 @@ class DomainServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadMigrationsFrom($this->packagePath() . '/database/migrations/');
-
-        $this->app->bind(
-            ItemRepositoryInterface::class,
-            DBItemRepository::class
-        );
     }
 
     private function packagePath()
