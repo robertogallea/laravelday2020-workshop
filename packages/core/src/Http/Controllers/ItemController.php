@@ -3,11 +3,12 @@
 namespace Workshop\Core\Http\Controllers;
 
 
+use Workshop\Core\Presenters\ItemPresenterInterface;
 use Workshop\Domain\Repositories\ItemRepositoryInterface;
 
 class ItemController
 {
-    public function __invoke(ItemRepositoryInterface $itemRepository)
+    public function __invoke(ItemRepositoryInterface $itemRepository, ItemPresenterInterface $itemPresenter)
     {
         $items = $itemRepository->all();
 
@@ -24,6 +25,6 @@ class ItemController
             'Ultimo aggiornamento' => $last_update,
         ];
 
-        return view('workshop::index')->with(compact('items', 'data'));
+        return $itemPresenter->index(compact('items', 'data'));
     }
 }

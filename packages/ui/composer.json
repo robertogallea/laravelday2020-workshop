@@ -3,7 +3,8 @@
     "type": "library",
     "description": "Ui for project",
     "require": {
-        "orchestra/testbench": "*"
+        "orchestra/testbench": "*",
+        "workshop/core": "*"
     },
     "autoload": {
         "psr-4": {
@@ -16,5 +17,13 @@
                 "Workshop\\Ui\\UiServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../core"
+        }
+    ]
 }
