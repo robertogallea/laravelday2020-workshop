@@ -4,17 +4,18 @@
 namespace App\Presenters;
 
 
+use Illuminate\Support\Collection;
 use Workshop\Core\Presenters\ItemPresenterInterface;
 
 class XMLItemPresenter implements ItemPresenterInterface
 {
 
-    public function index(array $data)
+    public function index(Collection $items)
     {
         $response = '';
         $response .= '<items>';
 
-        collect($data['items'])->each(function ($item) use (&$response) {
+        collect($items)->each(function ($item) use (&$response) {
             $response .= '<name>' . $item->name . '</name>';
         });
 

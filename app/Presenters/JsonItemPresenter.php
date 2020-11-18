@@ -4,11 +4,13 @@
 namespace App\Presenters;
 
 
+use Illuminate\Support\Collection;
+
 class JsonItemPresenter implements \Workshop\Core\Presenters\ItemPresenterInterface
 {
 
-    public function index(array $data)
+    public function index(Collection $items)
     {
-        return response()->json($data);
+        return response()->json($items);
     }
 }
