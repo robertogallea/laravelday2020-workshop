@@ -5,6 +5,6 @@ return [
         'items' => 'Workshop\\DBAccess\\Repositories\\DBItemRepository'
     ],
     'presenters' => [
-        'items' => 'Workshop\\Ui\\Presenters\\HtmlItemPresenter'
+        'items' => 'App\\Presenters\\XMLItemPresenter'
     ]
 ];
