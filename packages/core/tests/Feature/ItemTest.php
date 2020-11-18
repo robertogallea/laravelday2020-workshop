@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase;
 use Workshop\Core\CoreServiceProvider;
+use Workshop\Core\Presenters\ItemPresenterInterface;
 use Workshop\Domain\DomainServiceProvider;
 use Workshop\Domain\Models\Item;
 use Workshop\Domain\Repositories\ItemRepositoryInterface;
@@ -19,7 +20,7 @@ class ItemTest extends TestCase
 
         $this->mockRepositories();
 
-        $this->mockViews();
+        $this->mockPresenter();
     }
 
 
@@ -37,15 +38,17 @@ class ItemTest extends TestCase
         ];
     }
 
-    private function mockViews(): void
+    private function mockPresenter(): void
     {
-        \View::addNamespace('workshop', null);
-        \View::shouldReceive('make')
-            ->once()
-            ->with('workshop::index', [], [])
-            ->andReturnSelf()
-            ->shouldReceive('with')
-            ->once();
+        $this->app->bind(
+            ItemPresenterInterface::class,
+            function () {
+                return $this->mock(ItemPresenterInterface::class, function ($mock) {
+                    $mock->shouldReceive('index')
+                        ->once()
+                        ->andReturn('a response');
+                });
+            });
     }
 
     private function mockRepositories(): void
