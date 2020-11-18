@@ -4,7 +4,9 @@
 namespace Workshop\Core\Presenters;
 
 
+use Illuminate\Support\Collection;
+
 interface ItemPresenterInterface
 {
-    public function index(array $data);
+    public function index(Collection $items);
 }
