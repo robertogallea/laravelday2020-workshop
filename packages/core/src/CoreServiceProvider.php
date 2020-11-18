@@ -15,10 +15,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             $this->packagePath() . '/config/core.php' , 'core'
         );
-    }
 
-    public function boot()
-    {
         $this->publishes([
             $this->packagePath() . '/config/core.php' => config_path('core.php'),
         ]);
@@ -29,6 +26,11 @@ class CoreServiceProvider extends ServiceProvider
             ItemRepositoryInterface::class,
             config('core.repositories.items')
         );
+    }
+
+    public function boot()
+    {
+
     }
 
     private function packagePath()
