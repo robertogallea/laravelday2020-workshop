@@ -40,28 +40,20 @@ class ItemTest extends TestCase
 
     private function mockPresenter(): void
     {
-        $this->app->bind(
-            ItemPresenterInterface::class,
-            function () {
-                return $this->mock(ItemPresenterInterface::class, function ($mock) {
-                    $mock->shouldReceive('index')
-                        ->once()
-                        ->andReturn('a response');
-                });
-            });
+        $this->mock(ItemPresenterInterface::class, function ($mock) {
+            $mock->shouldReceive('index')
+                ->once()
+                ->andReturn('a response');
+        });
     }
 
     private function mockRepositories(): void
     {
-        $this->app->bind(
-            ItemRepositoryInterface::class,
-            function () {
-                return $this->mock(ItemRepositoryInterface::class, function ($mock) {
-                    $mock->shouldReceive('all')
-                        ->once()
-                        ->andReturn(Item::factory()->count(2)->create());
-                });
-            });
+        $this->mock(ItemRepositoryInterface::class, function ($mock) {
+            $mock->shouldReceive('all')
+                ->once()
+                ->andReturn(Item::factory()->count(2)->create());
+        });
     }
 
 
