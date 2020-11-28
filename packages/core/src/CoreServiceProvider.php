@@ -7,6 +7,7 @@ namespace Workshop\Core;
 use Illuminate\Support\ServiceProvider;
 use Workshop\Core\Http\Middleware\SelectResponse;
 use Workshop\Domain\Repositories\ItemRepositoryInterface;
+use Workshop\Core\Services\PresenterSelector;
 
 class CoreServiceProvider extends ServiceProvider
 {
@@ -15,10 +16,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             $this->packagePath() . '/config/core.php' , 'core'
         );
-    }
 
-    public function boot()
-    {
         $this->publishes([
             $this->packagePath() . '/config/core.php' => config_path('core.php'),
         ]);
@@ -30,7 +28,18 @@ class CoreServiceProvider extends ServiceProvider
             config('core.repositories.items')
         );
 
+        $this->app->bind(
+            'presenter-selector',
+            function ($app) {
+                return new PresenterSelector();
+            }
+        );
+    }
+
+    public function boot()
+    {
         $this->app['router']->aliasMiddleware('select-response', SelectResponse::class);
+        $this->app['router']->pushMiddlewareToGroup('web', SelectResponse::class);
     }
 
     private function packagePath()

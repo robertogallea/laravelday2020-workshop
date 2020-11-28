@@ -21,7 +21,10 @@
         "laravel": {
             "providers": [
                 "Workshop\\Core\\CoreServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Presenter": "Workshop\\Core\\Facades\\PresenterFacade"
+            }
         }
     },
     "repositories": [

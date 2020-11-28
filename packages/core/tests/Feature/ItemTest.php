@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Orchestra\Testbench\TestCase;
+use Tests\TestCase;
 use Workshop\Core\CoreServiceProvider;
 use Workshop\Core\Presenters\ItemPresenterInterface;
 use Workshop\Domain\DomainServiceProvider;
@@ -28,14 +28,6 @@ class ItemTest extends TestCase
     public function it_shows_items()
     {
         $this->get('/')->assertOk();
-    }
-
-    protected function getPackageProviders($app)
-    {
-        return [
-            CoreServiceProvider::class,
-            DomainServiceProvider::class
-        ];
     }
 
     private function mockPresenter(): void

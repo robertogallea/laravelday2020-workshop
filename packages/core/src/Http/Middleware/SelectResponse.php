@@ -8,11 +8,8 @@ class SelectResponse
     {
         $responseType = $request['responseType'];
 
-        if ($responseType && array_key_exists($responseType, config('core.response-types'))) {
-            app()->bind(
-                \Workshop\Core\Presenters\ItemPresenterInterface::class,
-                config('core.response-types.' . $responseType)
-            );
+        if ($responseType) {
+            \Presenter::select($responseType);
         }
 
         return $next($request);
