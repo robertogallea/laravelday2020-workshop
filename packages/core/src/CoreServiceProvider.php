@@ -5,7 +5,7 @@ namespace Workshop\Core;
 
 
 use Illuminate\Support\ServiceProvider;
-use Workshop\DBAccess\Repositories\DBItemRepository;
+use Workshop\Core\Http\Middleware\SelectResponse;
 use Workshop\Domain\Repositories\ItemRepositoryInterface;
 
 class CoreServiceProvider extends ServiceProvider
@@ -29,6 +29,8 @@ class CoreServiceProvider extends ServiceProvider
             ItemRepositoryInterface::class,
             config('core.repositories.items')
         );
+
+        $this->app['router']->aliasMiddleware('select-response', SelectResponse::class);
     }
 
     private function packagePath()
